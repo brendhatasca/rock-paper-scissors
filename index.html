@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
 </head>
 
-<body>
-    <script src="script.js"></script>
-    <h2 style="font-family: Roboto, sans-serif;">Answer the prompt to start playing!</h2>
-    <h3 style="font-family: Roboto, sans-serif;">Refresh page to play again!</h3>
+<body style="font-family: Roboto, sans-serif;">
+    <h2>Choose your player</h1>
+    
+    <div class="buttonscontainer"></div>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        
+    <div id="announce-winner"></div>
+    <div class="scoreboard">Scoreboard:</div>
+    <div id="round-result"></div>
+    <div id="round-winner"></div>
+    <div id="game-winner"></div>
+
 </body>
 </html>
