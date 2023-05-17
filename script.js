@@ -1,3 +1,6 @@
+// add function so that 
+// 'rock beats scissors' can be displayed
+// on the screen
 
 // Score keeper
 let playerScore = 0;
@@ -15,6 +18,7 @@ const body = document.querySelector('body');
 const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
+const scoreMessage = document.getElementById('announce-winner');
 
 // Add event listener for click
 rockBtn.addEventListener('click', () => handleClick('rock'));
@@ -35,23 +39,40 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection == 'scissors' && computerSelection == "paper") ||
     (playerSelection == 'rock' && computerSelection == "scissors") ) {
         playerScore += 1;
-        roundWinner = 'Player';
+        roundWinner = 'player';
     } 
     else if ( (playerSelection == computerSelection) ) {
         roundWinner = 'Tie';
     } else {
         computerScore += 1;
-        roundWinner = 'Computer';
-}}
+        roundWinner = 'computer';
+    }
+    updateScoreMessage(roundWinner, playerSelection, computerSelection);
+}
 
 // Display score
 function roundScore() {
     let divScore = document.getElementById('round-result');
-    divScore.textContent = `Player ${playerScore} x ${computerScore} Computer`;
+         divScore.textContent = `Player ${playerScore} x ${computerScore} Computer`;
     body.append(divScore);
 }
 
+// Changes message according to who won the round
+// 'Rock beats Paper'
+function updateScoreMessage(roundWinner, playerSelection, computerSelection) {
+    if (roundWinner == 'player') {
+        scoreMessage.textContent = `${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}`;
+    } else if (roundWinner == 'computer') {
+        scoreMessage.textContent = `${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
+    } else {
+        scoreMessage.textContent = "Tie!"
+    }
+}
+
+
+
 // Finish game once score is 5
+// Creates button to Play Again
 function endGame() {
     if ((playerScore == 5) || (computerScore == 5)) {
     checkGameWinner();
@@ -88,20 +109,6 @@ function playAgain() {
     refreshBtn.addEventListener('click', () => window.location.reload())
 }
 
-
-function game() {
-    // for (let i = 0; i < 5; i++) {
-    //     let playerSelection = prompt('Choose your player! Rock, paper or scissors?'); 
-    //    playerSelection = playerSelection.toLowerCase(); 
-        let computerSelection = getComputerChoice(); 
-    //    alert('The computer chose ' + computerSelection);
-        playRound(playerSelection, computerSelection);
-    //    roundScore();
-};
-
-// Calls functions
-//game();
-//alert( checkWinner() );
-
-
-    
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
