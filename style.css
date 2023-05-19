@@ -1,7 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(32, 29, 29);
+}
+
+h2 {
+    font-family: Noir Bold, sans-serif;
+    font-size: 35px;
+    color: rgb(238, 191, 23);
+}
+
 .buttons-container {
     margin-bottom: 30px;
 }
 
+
+#announce-winner {
+    color: white;
+    font-family: Noir, sans-serif;
+    font-size: 20px;
+}
+
+.choice {
+    margin: 10px;
+    background-color: transparent;
+    padding: 10px;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* .score-container {
+    border: 2px solid black;
+    border-radius: 3px;
+} */
+
 .scoreboard {
-    margin-top: 30px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    color: rgb(238, 191, 23);
+    font-family: Noir Regular, sans-serif;
+    font-size: 20px;
+}
+
+#round-result {
+    font-family: Noir Regular, sans-serif;
+    color: white;
+    font-size: 25px;
+}
+
+#game-winner {
+    color: rgb(255, 255, 255);
+    font-family: Noir Regular, sans-serif;
+    font-style: italic;
+    margin: 30px;
+}
+
+.refresh-page {
+    border: 2px solid black;
 }

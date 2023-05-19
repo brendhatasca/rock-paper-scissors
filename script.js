@@ -19,6 +19,10 @@ const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
 const scoreMessage = document.getElementById('announce-winner');
+const divScore = document.getElementById('round-result');
+
+divScore.textContent = `Player ${playerScore} x ${computerScore} Computer`;
+body.append(divScore);
 
 // Add event listener for click
 rockBtn.addEventListener('click', () => handleClick('rock'));
@@ -52,8 +56,7 @@ function playRound(playerSelection, computerSelection) {
 
 // Display score
 function roundScore() {
-    let divScore = document.getElementById('round-result');
-         divScore.textContent = `Player ${playerScore} x ${computerScore} Computer`;
+    divScore.textContent = `Player ${playerScore} x ${computerScore} Computer`;
     body.append(divScore);
 }
 
@@ -61,14 +64,13 @@ function roundScore() {
 // 'Rock beats Paper'
 function updateScoreMessage(roundWinner, playerSelection, computerSelection) {
     if (roundWinner == 'player') {
-        scoreMessage.textContent = `${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}`;
+        scoreMessage.textContent = `You win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}`;
     } else if (roundWinner == 'computer') {
-        scoreMessage.textContent = `${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
+        scoreMessage.textContent = `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
     } else {
         scoreMessage.textContent = "Tie!"
     }
 }
-
 
 
 // Finish game once score is 5
@@ -86,9 +88,9 @@ function checkGameWinner() {
     let displayWinner = document.getElementById('game-winner'); 
 
     if (playerScore > computerScore) {
-        displayWinner.textContent = "You win! Humankind might not be doomed after all.";
+        displayWinner.textContent = "You won the game! Humankind might not be doomed after all.";
     } else {
-        displayWinner.textContent = "You lose! The Age of Ultron is coming.";
+        displayWinner.textContent = "You lost the game! The Age of Ultron is coming.";
     }
     body.append(displayWinner);
 }

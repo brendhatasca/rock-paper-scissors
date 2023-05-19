@@ -6,22 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7a94e3df5c.js" crossorigin="anonymous"></script>
     <title>Rock Paper Scissors</title>
 </head>
 
 <body style="font-family: Roboto, sans-serif;">
-    <h2>Choose your player</h1>
+    <h2>Choose your fighter</h1>
     
-    <div class="buttons-container"></div>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-        
+    <div class="buttons-container">
+        <button id="rock" class="choice"><i class="fa-solid fa-hand-back-fist fa-5x" style="color: #ffffff;"></i>
+            </button>
+        <button id="paper" class="choice">
+            <i class="fa-solid fa-hand fa-5x" style="color: #ffffff"></i>
+        </button>
+        <button id="scissors" class="choice">
+            <i class="fa-solid fa-hand-scissors fa-5x" style="color: #ffffff;"></i>
+        </button>
+    </div>    
+
     <div id="announce-winner"></div>
-    <div class="scoreboard">Scoreboard:</div>
-    <div id="round-result"></div>
-    <div id="round-winner"></div>
-    <div id="game-winner"></div>
+    <div class="score-container">
+    <div class="scoreboard">SCOREBOARD</div>
+        <div id="round-result"></div>
+         <div id="round-winner"></div>
+        <div id="game-winner"></div>
+    </div>
 
 </body>
 </html>
