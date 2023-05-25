@@ -20,6 +20,33 @@ const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
 const scoreMessage = document.getElementById('announce-winner');
 const divScore = document.getElementById('round-result');
+const rockIcon = document.querySelector('.fa-solid');
+const paperIcon = document.querySelector('#icon2');
+const scissorsIcon = document.querySelector('#icon3')
+
+rockIcon.addEventListener('mouseover', () => {
+    rockIcon.style.color = 'yellow';
+})
+rockIcon.addEventListener('mouseleave', () => {
+    rockIcon.style.color = 'white';
+})
+
+paperIcon.addEventListener('mouseover', () => {
+    paperIcon.style.color = 'yellow';
+})
+paperIcon.addEventListener('mouseleave', () => {
+    paperIcon.style.color = 'white';
+})
+
+scissorsIcon.addEventListener('mouseover', () => {
+    scissorsIcon.style.color = 'yellow';
+})
+scissorsIcon.addEventListener('mouseleave', () => {
+    scissorsIcon.style.color = 'white';
+})
+
+
+
 
 divScore.textContent = `Player ${playerScore} x ${computerScore} Computer`;
 body.append(divScore);
