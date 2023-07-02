@@ -1,4 +1,7 @@
 # rock-paper-scissors
+
+Live Preview: https://brendhatasca.github.io/rock-paper-scissors/
+
 JavaScript Project
 
 1. Have the computer return ramdomly rock, paper or scissors
